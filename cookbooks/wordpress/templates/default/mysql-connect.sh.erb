@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export db_ip=$(docker inspect --format="{{ .NetworkSettings.IPAddress }}" $(docker inspect --format="{{.Id}}" wordpress))
+
+mysql -h $db_ip -u<%= @DB_USER %> -p<%= @DB_PASSWORD %> -e "CREATE DATABASE IF NOT EXISTS wordpress;"

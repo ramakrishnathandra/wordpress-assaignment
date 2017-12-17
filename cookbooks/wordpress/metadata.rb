@@ -1,0 +1,5 @@
+name 'wordpress'
+description 'A basic wordpress cookbook'
+version '1.0.0'
+maintainer 'Cleo'
+maintainer_email 'ramakrishna.thandra@gmail.com'
