@@ -58,6 +58,40 @@ Setting Up a Workstation
        8) Confirm that knife.rb is set up correctly by running the client list
            knife client list
 
+Downloading and create the wordpress stack
 
+       1) Go to Chef-repo folder in the Workstation
+       
+       2) Git clone git@github.com:ramakrishnathandra/wordpress-assaignment.git, you can find below folders in the respository
+                 cookbooks/
+                 data_bags/
+                 deploy.sh
+                 roles/
+                 base-network.template
+       
+       3) Create the keypair in the region where we are going to launch the stack and copy the key pair in your work station
+       
+       4) base-network.template will Create a VPC, Subnets, Security Groups, EIP, Internet Gateway, Route Tables
+       
+       5) ./deploy.sh will upload the databag, cookbook and create the ec2 box to launch word press server, please find the deploy.sh help, none of them are mandatory.
+               
+               ubuntu@ip-172-31-7-177:~/chef-repo$ ./deploy.sh -h
 
+                    usage: deploy.sh -x [os] -i [keyname] -N [ec2 instance name] -I [ubuntu 14.04 amiid] -f [ec2 instance type] -e [elasticip] -g [security group] -s [subnetid]
+                    -x aws os
+                    -i aws keyname [ need to specify whole path, to connect the ec2 machine we launched]
+                    -N aws name of the ec2 instance
+                    -I aws ubuntu 14.04 amiid
+                    -f aws instance type
+                    -e aws elasticip
+                    -g aws security group
+                    -s aws subnet id to launch ec2 in vpc
+                    -u external site url
+                    -h help
+
+       
+       
+       
+    
+    
     
